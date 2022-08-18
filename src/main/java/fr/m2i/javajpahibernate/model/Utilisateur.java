@@ -1,6 +1,7 @@
 package fr.m2i.javajpahibernate.model;
 
 import java.util.Date;
+import java.util.List;
 import javax.persistence.*;
 
 @Entity
@@ -15,6 +16,9 @@ public class Utilisateur {
     @JoinColumn(name = "id_role", nullable = false)
     @ManyToOne(fetch = FetchType.LAZY)
     private Role role;
+
+    @OneToMany(mappedBy = "utilisateur", cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE}, fetch = FetchType.LAZY, orphanRemoval = true)
+    private List<Adresse> adresses;
 
     @Column(name = "civilite", length = 100)
     private String civilite;
@@ -83,6 +87,14 @@ public class Utilisateur {
 
     public void setRole(Role role) {
         this.role = role;
+    }
+
+    public List<Adresse> getAdresses() {
+        return adresses;
+    }
+
+    public void setAdresses(List<Adresse> adresses) {
+        this.adresses = adresses;
     }
 
     public String getCivilite() {
@@ -179,6 +191,14 @@ public class Utilisateur {
                 + ", dateCreation=" + dateCreation
                 + ", dateModification=" + dateModification
                 + ", dateNaissance=" + dateNaissance + '}';
+    }
+
+    public void addAddress(Adresse address) {
+        
+    }
+
+    public void removeAddress(Adresse address) {
+        
     }
 
     public void copy(Utilisateur userData) {
