@@ -75,7 +75,7 @@ public class RoleDAO {
 
     public void update(Long id, Role roleData) {
 
-        Role roleToUpdate = entityManager.find(Role.class, id);
+        Role roleToUpdate = findById(id);
 
         if (roleToUpdate == null) {
             System.out.println("Attention le role avec l'id : " + id + " n'exsiste pas !");
