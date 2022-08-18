@@ -14,15 +14,15 @@ public class JavaJpaHibernate {
         RoleDAO roleDao = new RoleDAO();
 
         // create
-        Role role = new Role("USER", "Le rôle User"); 
-        roleDao.create(role);
+//        Role role = new Role("USER", "Le rôle User"); 
+//        roleDao.create(role);
 
         // find all
-        List<Role> roles = roleDao.findAll();
-        
-        for (Role r : roles) {
-            System.out.println(r);
-        }
+//        List<Role> roles = roleDao.findAll();
+//        
+//        for (Role r : roles) {
+//            System.out.println(r);
+//        }
         
 //
 //        // find
