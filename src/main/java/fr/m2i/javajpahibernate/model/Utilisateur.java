@@ -1,5 +1,6 @@
 package fr.m2i.javajpahibernate.model;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.*;
@@ -194,11 +195,20 @@ public class Utilisateur {
     }
 
     public void addAddress(Adresse address) {
-        
+        if (adresses == null) {
+            adresses = new ArrayList<>();
+        }
+
+        adresses.add(address);
+        address.setUtilisateur(this);
     }
 
     public void removeAddress(Adresse address) {
-        
+        address.setUtilisateur(null);
+
+        if (adresses != null) {
+            adresses.remove(address);
+        }
     }
 
     public void copy(Utilisateur userData) {
