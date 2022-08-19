@@ -7,7 +7,7 @@
         <properties>
             <!-- database connection -->
             <property name="hibernate.connection.driver_class" value="com.mysql.cj.jdbc.Driver" />
-            <property name="hibernate.connection.url" value="jdbc:mysql://localhost:8889/base_site_commerce" />
+            <property name="hibernate.connection.url" value="jdbc:mysql://localhost/base_site_commerce" />
             <property name="hibernate.connection.user" value="commerce" />
             <property name="hibernate.connection.password" value="commerce" />
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL57Dialect" />

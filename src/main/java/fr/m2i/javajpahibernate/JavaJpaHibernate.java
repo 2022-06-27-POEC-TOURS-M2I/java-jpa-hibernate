@@ -62,7 +62,6 @@ public class JavaJpaHibernate {
         Adresse address1 = new Adresse("21 avenue gabriel peri", "76600", "Le Havre", "France", false);
         Adresse address2 = new Adresse("1 rue de la paix", "75001", "Paris", "France", true);
         Adresse address3 = new Adresse("10 rue de l'insurection", "75000", "Paris", "France", false);
-        
 
         user.addAddress(address1);
         user2.addAddress(address2);
@@ -98,9 +97,9 @@ public class JavaJpaHibernate {
         // update user address
         secondUser.removeAddress(secondUser.getAdresses().get(secondUser.getAdresses().size() - 1));
         userDao.update(2L, secondUser);
-        
+
         /*********** ADDRESS **********/
-        
+
 //        AdresseDAO adresseDao = new AdresseDAO();
 //        
 //        // create
